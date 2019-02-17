@@ -89,7 +89,18 @@ public class NQueens_CNF {
 
     private static void atMostOneQueenInColumn()
     {
-        // There is at most one queen in each column
+        DIMACS_CNF.add("c There is at most one queen in each cloumn:");
+        for(int column = 1; column <= N-1; N++)
+        {
+            for(int row = 1; row <= N; i++)
+            {
+                for(int i = row; o <= N; i++)
+                {
+                    DIMACS_CNF.add(" -" + toVariable(row, column) + (" -" + toVariable( row, i) + " 0"));
+                    clauses++;
+                }
+            }
+        }
     }
 
     private static void diagonalBottomSemiSquareOfUpLeftToBottomRight()
